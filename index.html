@@ -16,6 +16,9 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Metal+Mania&family=Oswald&family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
 
+		<!-- Favicon -->
+		<link rel="icon" type="image" href="https://cdn.iconscout.com/icon/free/png-256/free-burger-3069113-2550746.png">
+
 	</head>
 
 	<body>
@@ -61,7 +64,7 @@
 						<h1>Ray Mart Tiburcio</h1>
 						<h3>Full Stack Web Developer</h3>
 						<p class="text-justify">
-							Ray Mart, <em>aka</em> <strong>Mamart</strong>, is a Technical Recruiter who supports his clients by filling-in IT-related job requisitions in their respective companies. He is now a part-time student in Zuitt Coding Bootcamp and is looking forward to become a full-time Web developer by year 2024.
+							Ray Mart is currently working as a Technical Recruiter, where he supports his clients by filling vacancies for any IT-related positions. Over the past few years, interacting with various software developers has heightened his interest in logic and problem-solving. Having completed a programming class through Zuitt Coding Bootcamp, he is eager to secure a job in software development to showcase everything he has learned and further his knowledge in the field.
 						</p>
 					</div>
 				</div>
@@ -186,27 +189,27 @@
 				<!-- Message Me -->
 				
 				<div class="container-fluid">
-					<div class="row justify-content-center">
-						<div class="col-5">
+					<div class="row d-flex justify-content-center">
+						<div class="col-md-4 col-sm-12">
 							<h3 class="py-3 text-center">Visit Me</h3>
-							<div class="iframe">
+							<div id="iframe">
 								<iframe class="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14218.21870921665!2d120.98468799233625!3d14.585289890711064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9861e670d79%3A0xe8bf3fa01b421dc9!2sPaco%2C%20Manila%2C%20Metro%20Manila!5e1!3m2!1sen!2sph!4v1698319164505!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 							</div>
 							
 						</div>
 
-						<div class="col-5">
+						<div class="col-md-4 col-sm-12">
 							<h3 class="py-3 text-center">Message Me</h3>
 							<div class="row d-flex justify-content-center">
 								<!-- <div class="col"> -->
-									<form class="p-3">
+									<form id="form" class="p-3">
 										<div>
 											<label for="fullName" class="form-label">Full Name:</label>
 											<input type="text" name="fullName" class="form-control" id="fullName">
 										</div>
 										<div>
 											<label for="contactNumber" class="form-label">Contact Number:</label>
-											<input type="tel" name="contactNumber" class="form-control" id="contactNumber">
+											<input type="number" name="contactNumber" class="form-control" id="contactNumber">
 										</div>
 										<div>
 											<label for="emailAdd" class="form-label">Email Address:</label>
@@ -216,6 +219,33 @@
 											<label for="siteMessage" class="form-label">Message:</label>
 											<textarea name="siteMessage" rows="5" class="form-control" id="siteMessage"></textarea>
 										</div>
+
+										<!-- Contact Button -->
+
+										<div class="d-flex justify-content-center mt-4">
+											<button type="submit" class="rounded px-2 py-1" data-bs-toggle="modal" data-bs-target="#contactModal">Submit</button>
+										</div>
+
+										<!-- Contact Modal -->
+
+										<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+										  <div class="modal-dialog">
+										    <div class="modal-content">
+										      <div class="modal-header">
+										        <h1 class="modal-title fs-5" id="contactModalLabel">Thank You for Visiting!</h1>
+										        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										      </div>
+										      <div class="modal-body">
+										        Message has been submitted.
+										      </div>
+										      <div class="modal-footer">
+										        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+										      </div>
+										    </div>
+										  </div>
+										</div>
+										
+										
 									</form>
 									
 								</div>
@@ -256,6 +286,16 @@
 
 		<!-- Bootstrap Script -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+		<!-- Script for Modal -->
+		<script>
+			document.getElementById('form').addEventListener('submit', function(event){
+				event.preventDefault();
+
+				var contactModal = bootstrap.Modal(getElementById('contactModal'));
+				contactModal.show();
+			})
+		</script>
 
 	</body>
 </html>
